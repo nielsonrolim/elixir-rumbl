@@ -6,6 +6,7 @@ defmodule Rumbl.Accounts.User do
     field(:name, :string)
     field(:username, :string)
     field(:password, :string, virtual: true)
+    field(:password_confirmation, :string, virtual: true)
     field(:password_hash, :string)
 
     timestamps()
@@ -24,6 +25,7 @@ defmodule Rumbl.Accounts.User do
     |> cast(params, [:password])
     |> validate_required([:password])
     |> validate_length(:password, min: 6, max: 100)
+    |> validate_confirmation(:password)
     |> put_pass_hash()
   end
 
