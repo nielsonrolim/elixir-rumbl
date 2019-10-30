@@ -35,3 +35,7 @@ npm-debug.log
 
 # ElixirLS
 /.elixir_ls/
+
+# VSCode
+/.vscode/
+
