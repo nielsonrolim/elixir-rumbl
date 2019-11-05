@@ -39,3 +39,5 @@ npm-debug.log
 # VSCode
 /.vscode/
 
+# IDEA IntelliJ
+/.idea/
