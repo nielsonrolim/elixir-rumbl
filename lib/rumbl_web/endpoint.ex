@@ -42,5 +42,11 @@ defmodule RumblWeb.Endpoint do
     key: "_rumbl_key",
     signing_salt: "2K4ry+QB"
 
+  plug Corsica,
+    origins: "http://localhost:8080",
+    allow_credentials: true,
+    allow_headers: ["Content-Type"],
+    log: [rejected: :error, invalid: :warn, accepted: :debug]
+
   plug RumblWeb.Router
 end
